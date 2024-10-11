@@ -31,14 +31,20 @@ const fetchDataAndRender = (timeframe) => {
                     <div class="card_text">
                         <div class="card_title">
                             <h3>${item.title}</h3>
-                            <img src="images/icon-ellipsis.svg" alt="">
+                            <button aria-label="More options"><img src="images/icon-ellipsis.svg" alt=""></button>                           
                         </div>
                         <h2>${item.timeframes[timeframe].current}hrs</h2>
                         <span> ${timeframe === 'daily' ? 'Yesterday' : timeframe === 'weekly' ? 'Last Week' : 'Last Month'} - ${item.timeframes[timeframe].previous}hrs</span>
                     </div>
                 </div>`;
         });
+    })
+    .catch((error) => {
+        console.error("Failed to fetch data:", error);
+        cards.innerHTML = "<p>Error loading data. Please try again later.</p>";
     });
+    
+    
 };
 
 // Add event listener to the document when it loads

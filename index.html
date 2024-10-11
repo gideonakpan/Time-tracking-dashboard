@@ -31,16 +31,26 @@
           <h2>Jeremy Robson</h2>
           </div>
         </div>
-        <div class="links">
-          <p class="profile-link" id="daily">Daily</p>
-          <p class="profile-link active" id="weekly">Weekly</p>
-          <p class="profile-link" id="monthly">Monthly</p>
+        <!-- <div class="links">
+          <button class="profile-link" id="daily">Daily</button>
+          <button class="profile-link active" id="weekly">Weekly</button>
+          <button class="profile-link" id="monthly">Monthly</button>
+        </div> -->
+        <div role="tablist" class="links">
+          <button class="profile-link" role="tab" aria-selected="true" id="daily" aria-controls="panel-daily">Daily</button>
+          <button class="profile-link active" role="tab" aria-selected="false" id="weekly" aria-controls="panel-weekly">Weekly</button>
+          <button class="profile-link" role="tab" aria-selected="false" id="monthly" aria-controls="panel-monthly">Monthly</button>
         </div>
+        <div id="panel-daily" role="tabpanel" hidden>Daily Content</div>
+        <div id="panel-weekly" role="tabpanel" hidden>Weekly Content</div>
+        <div id="panel-monthly" role="tabpanel" hidden>Monthly Content</div>
+        
     </section>
 
     
     <!-- Second Section  -->
     <section class="cards" id="cards">
+      
    
 
     </section>

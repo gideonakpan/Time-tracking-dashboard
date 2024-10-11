@@ -1,11 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    outline: 0;
+    /* outline: 0; */
     border: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+}
+
+button:focus, a:focus {
+    outline: 2px solid var(--Light-orange);
+    border-radius: 5px;
 }
 
 :root {
@@ -70,7 +75,9 @@ main {
     margin-bottom: 50px;
 }
 .links {
-    color: var(--Desaturated-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
     padding-bottom: 30px;
 }
@@ -78,6 +85,8 @@ main {
     background: inherit;
     margin-bottom: 20px;
     font-size: 13px;
+    font-weight: 600;
+    color: var(--Desaturated-blue);
 }
 .active {
     color: var(--white);
@@ -143,6 +152,9 @@ main {
     color: var(--Desaturated-blue);
     font-size: 12px;
 }
+.card_text button{
+    background: inherit;
+}
 
 /*----------------Card colors --------------------*/
 
@@ -166,8 +178,8 @@ main {
 }
 
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 780px) {
+/* Medium devices (landscape tablets, 48em and up) */
+@media only screen and (max-width: 48em) {
     main {
         gap: 20px;
         grid-template-columns:  1fr;  
@@ -180,13 +192,17 @@ main {
     }
     .links {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        /* justify-content: space-between; */
+    }
+    .links button{
+        margin-right: 1em;
     }
 }
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5em) {
     .profile {
         display: flex;
         justify-content: space-between;
